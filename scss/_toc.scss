@@ -1,0 +1,56 @@
+/*
+ * Solo - A small and beautiful blogging system written in Java.
+ * Copyright (c) 2010-present, b3log.org
+ *
+ * Solo is licensed under Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ *         http://license.coscl.org.cn/MulanPSL2
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+ * See the Mulan PSL v2 for more details.
+ */
+/**
+ * toc
+ *
+ * @author <a href="http://vanessa.b3log.org">Liyuan Li</ta>
+ * @version 0.1.0.0, Mar 20, 2019
+ */
+// toc
+.article__toc {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    list-style-type: none;
+
+    a {
+      padding-left: 10px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.toc__h3 a {
+      padding-left: 20px;
+    }
+
+    &.toc__h4 a {
+      padding-left: 30px;
+    }
+
+    &.toc__h5 a {
+      padding-left: 40px;
+    }
+
+    &.toc__h6 a {
+      padding-left: 50px;
+    }
+  }
+}
