@@ -6,8 +6,17 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Tue, 05 Mar 2024 16:53:21 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2024 17:22:07 +0800</lastBuildDate>
     <language>zh-cn</language>
+    <item>
+      <title>React学习笔记</title>
+      <link>https://jin821551407.github.io/articles/2024/03/05/1709630520235.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2024/03/05/1709630520235.html</guid>
+      <category>react</category>
+      <pubDate>Tue, 05 Mar 2024 17:22:00 +0800</pubDate>
+    </item>
     <item>
       <title>Javascript中的Promise使用</title>
       <link>https://jin821551407.github.io/articles/2023/12/27/1703660225131.html</link>
