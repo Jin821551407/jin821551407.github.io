@@ -1,0 +1,24 @@
+{
+  "name": "solo-v4.4.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git subtree push --prefix=static-site origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jin821551407/jin821551407.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jin821551407/jin821551407.github.io/issues"
+  },
+  "homepage": "https://github.com/Jin821551407/jin821551407.github.io#readme"
+}
