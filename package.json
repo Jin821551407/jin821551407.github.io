@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "git subtree push --prefix=static-site origin gh-pages"
+    "git-add": "git add -A",
+    "git-commit": "git commit -m '部署gh-pages' ",
+    "push-gh-pages": "git subtree push --prefix=static-site origin gh-pages",
+    "deploy": "npm run git-add & npm run git-commit & npm run push-gh-pages"
   },
   "repository": {
     "type": "git",
