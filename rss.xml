@@ -6,8 +6,18 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Wed, 03 Apr 2024 10:35:48 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 11:51:00 +0800</lastBuildDate>
     <language>zh-cn</language>
+    <item>
+      <title>关于vue2中的computed计算属性</title>
+      <link>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</guid>
+      <category>面试</category>
+      <category>vue</category>
+      <pubDate>Thu, 27 Jun 2024 11:06:47 +0800</pubDate>
+    </item>
     <item>
       <title>git查询提交记录</title>
       <link>https://jin821551407.github.io/articles/2024/04/01/1711936168441.html</link>
@@ -16,15 +26,6 @@
       <guid>https://jin821551407.github.io/articles/2024/04/01/1711936168441.html</guid>
       <category>git</category>
       <pubDate>Mon, 01 Apr 2024 09:49:44 +0800</pubDate>
-    </item>
-    <item>
-      <title>ES6数组方法的使用</title>
-      <link>https://jin821551407.github.io/articles/2024/03/29/1711699905723.html</link>
-      <description><![CDATA[<p>记录ES6数组方法的使用</p>]]></description>
-      <author>jinyu1222</author>
-      <guid>https://jin821551407.github.io/articles/2024/03/29/1711699905723.html</guid>
-      <category>ES6</category>
-      <pubDate>Fri, 29 Mar 2024 16:12:06 +0800</pubDate>
     </item>
   </channel>
 </rss>
