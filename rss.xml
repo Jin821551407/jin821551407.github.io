@@ -6,7 +6,7 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Fri, 16 Aug 2024 16:27:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Aug 2024 16:40:09 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>JS中数据类型的转换</title>
@@ -15,8 +15,8 @@
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
       <category>面试</category>
-      <category>js</category>
       <category>JavaScript</category>
+      <category>js</category>
       <pubDate>Fri, 16 Aug 2024 16:25:37 +0800</pubDate>
     </item>
     <item>
