@@ -6,17 +6,28 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Fri, 16 Aug 2024 17:24:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2024 16:39:34 +0800</lastBuildDate>
     <language>zh-cn</language>
+    <item>
+      <title>手写call,apply,bind</title>
+      <link>https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</guid>
+      <category>面试</category>
+      <category>JavaScript</category>
+      <category>js</category>
+      <pubDate>Thu, 05 Sep 2024 16:39:20 +0800</pubDate>
+    </item>
     <item>
       <title>JS中数据类型的转换</title>
       <link>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</link>
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
-      <category>js</category>
       <category>JavaScript</category>
       <category>面试</category>
+      <category>js</category>
       <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
     </item>
     <item>
@@ -25,8 +36,8 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</guid>
-      <category>面试</category>
       <category>vue</category>
+      <category>面试</category>
       <pubDate>Thu, 27 Jun 2024 11:06:47 +0800</pubDate>
     </item>
     <item>

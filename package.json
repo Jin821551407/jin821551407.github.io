@@ -7,6 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "start": "java -cp \"lib/*;.\" org.b3log.solo.Server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "add": "git add -A",
     "commit": "git commit -m '部署gh-pages'",
