@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>git查询提交记录 - FindMyCode</title><meta name="description" content="git查询提交记录"/><meta property="og:description" content="git查询提交记录"/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="git查询提交记录 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="git查询提交记录 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html">        <link rel="stylesheet"
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写call,apply,bind - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写call,apply,bind - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写call,apply,bind - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">        <link rel="stylesheet"
               href="https://jin821551407.github.io/skins/yilia/css/base.css?1725525403259"/>
-            <link rel="next" title="关于vue2中的computed计算属性" href="https://jin821551407.github.io/articles/2024/06/27/1719457607161.html">
+            <link rel="prev" title="JS中数据类型的转换" href="https://jin821551407.github.io/articles/2024/08/16/1723796737620.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
 <div class="side fn__flex-column">
@@ -50,35 +50,46 @@
             <div class="vditor-reset"></div>
         <a rel="alternate" href="https://jin821551407.github.io/rss.xml" title="订阅" class="icon-rss"></a>
     </footer>
+        <div class="toc">
+            <a onclick="$('.side .toc').hide();" href="javascript:void(0)" class="close">X</a>
+<ul class="article__toc">
+        <li class="toc__h1">
+            <a href="#toc_h1_0">手写call,apply,bind</a>
+        </li>
+</ul>        </div>
 </div>
 <main>
     <article class="post">
         <header class="fn__flex">
             <h2 class="fn__flex-1">
-                <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html">
-                    git查询提交记录
+                <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
+                    手写call,apply,bind
                 </a>
             </h2>
-            <time><span class="icon-date"></span> 2024-04-01</time>
+            <time><span class="icon-date"></span> 2024-09-05</time>
         </header>
         <div class="article__footer fn__flex">
             <span class="icon-tag fn__flex-center"></span>
             <span>&nbsp;&nbsp;&nbsp;</span>
             <div class="tags fn__flex-1 fn__flex-center">
-                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/git">
-                        git</a>
+                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/js">
+                        js</a>
+                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/%E9%9D%A2%E8%AF%95">
+                        面试</a>
+                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/JavaScript">
+                        JavaScript</a>
             </div>
             <span>&nbsp;&nbsp;&nbsp;</span>
-                <a href="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html#b3logsolocomments"
+                <a href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html#b3logsolocomments"
                    class="vditor-tooltipped__n vditor-tooltipped link fn__flex-center"
                    aria-label="评论">
-                    <span data-uvstatcmt="1711936168441">0</span>
+                    <span data-uvstatcmt="1725525546049">0</span>
                     <span class="icon-chat"></span>
                 </a>
             <a class="vditor-tooltipped__n vditor-tooltipped link fn__flex-center"
-               href="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html"
+               href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html"
                aria-label="浏览">
-                <span data-uvstaturl="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html">0</span>
+                <span data-uvstaturl="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">0</span>
                 <span class="icon-views"></span>
             </a>
             <a rel="nofollow" href="https://jin821551407.github.io/authors/1703064881018" class="fn__flex-center">
@@ -88,33 +99,103 @@
         </div>
 
         <section class="abstract vditor-reset">
-            <p><strong>git查询自己的提交记录</strong></p>
-<p>要查询Git的提交记录，你可以使用<code>git log</code>命令。如果你想要查看自己的提交记录，你可以使用<code>--author</code>选项来指定作者。</p>
-<p>下面是一个基本的<code>git log</code>命令，用于查看自己的提交记录:</p>
-<pre><code class="language-bash">git log --author="你的用户名"
+            <h1 id="toc_h1_0">手写call,apply,bind</h1>
+<pre><code class="language-js">/**
+ * 1.call中的this指向是指向调用call的那个函数,直接调用this,这个函数中的this会指向全局,将this绑定到ctx对象中调用,这个函数中的this则会指向传入的ctx
+ * 2.将call中的this绑定到ctx中时,使用Symbol保证此属性值唯一,使用defineProperty保证此属性不可被遍历
+ * 3.调用完成后将此属性删除,并将返回值返回
+ * 4.ctx为null或者undefined则ctx赋值为全局对象,否则全转换为Object类型
+ * 5.apply 和 call 的区别只是传参方式不同,其余都一致
+ */
+
+Function.prototype.myCall = function (ctx, ...args) {
+    if (ctx === null || ctx === undefined) {
+        ctx = globalThis
+    }
+    else {
+        ctx = Object(ctx)
+    }
+    const key = Symbol('temp')
+    Object.defineProperty(ctx, key, {
+        enumerable: false,
+        value: this
+    })
+    const result = ctx[key](...args)
+    delete ctx[key]
+    return result
+}
+
+Function.prototype.myApply = function (ctx, args) {
+    if (ctx === null || ctx === undefined) {
+        ctx = globalThis
+    }
+    else {
+        ctx = Object(ctx)
+    }
+    const key = Symbol('temp')
+    Object.defineProperty(ctx, key, {
+        enumerable: false,
+        value: this
+    })
+    const result = ctx[key](...args)
+    delete ctx[key]
+    return result
+}
+
+/**
+ * 1.bind里需要把bind调用时传入的剩余参数和新返回的函数调用传的参数 在调用时一起传入
+ * 2.bind返回的新函数可能直接调用也有可能用new方法进行调用
+*/
+
+Function.prototype.myBind = function (ctx, ...args1) {
+    const fn = this
+    return function A(...args2) {
+        const allArgs = args1.concat(args2)
+        if (Object.getPrototypeOf(this) === A.prototype) {
+            return new fn(...allArgs)
+        } else {
+            return fn.apply(ctx, allArgs)
+        }
+    }
+}
+
+function method(a, b) {
+    console.log(this, ...arguments)
+    return a + b
+}
+method(1, 2)
+method.myCall('ctx', 1, 2)
+method.myApply('ctx', [1, 2])
+const newFn = method.myBind('ctx', 1, 2)
+const result1 = newFn(3, 4)
+const result2 = new newFn(3, 4)
+console.log('result1-----&gt;', result1)
+console.log('result2-----&gt;', result2)
+
+// method.call('ctx', 1, 2)
+// method.apply('ctx', [1, 2])
+// const newFn = method.bind('ctx', 1, 2)
+// const result1 = newFn(3, 4)
+// const result2 = new newFn(3, 4)
+// console.log('result1-----&gt;', result1)
+// console.log('result2-----&gt;', result2)
+
 </code></pre>
-<p>如果你想要更简洁地查看提交历史，可以使用<code>--oneline</code>选项，它会将每个提交压缩到一行：</p>
-<pre><code class="language-bash">git log --author="你的用户名" --oneline
-</code></pre>
-<p>如果你想要查看特定时间段的提交，可以使用<code>--since</code>和<code>--until</code>选项：</p>
-<pre><code class="language-bash">git log --author="你的用户名" --since="2023-01-01" --until="2023-04-01"
-</code></pre>
-<p>这些命令会显示你的提交记录，你可以根据需要添加更多的选项来定制输出。</p>
                 <div>
                     <hr>
 
-标题：git查询提交记录<br>
+标题：手写call,apply,bind<br>
 作者：<a href="https://jin821551407.github.io" target="_blank">jinyu1222</a><br>
-地址：<a href="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html" target="_blank">https://jin821551407.github.io/articles/2024/04/01/1711936168441.html</a><br>
+地址：<a href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html" target="_blank">https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</a><br>
 
 <!-- 签名档内可使用 HTML、JavaScript -->
 <br>
                 </div>
 
                 <aside class="fn__flex">
-                        <a class="fn__flex-inline" rel="next" href="https://jin821551407.github.io/articles/2024/06/27/1719457607161.html">
-                            <span>关于vue2中的computed计算属性&nbsp; </span>
-                            <strong>&gt;</strong>
+                        <a class="fn__flex-1 fn__flex-inline" rel="prev" href="https://jin821551407.github.io/articles/2024/08/16/1723796737620.html">
+                            <strong>&lt;</strong>
+                            <span>&nbsp; JS中数据类型的转换&nbsp;&nbsp;&nbsp;</span>
                         </a>
                 </aside>
         </section>
@@ -122,9 +203,9 @@
         <footer class="fn-clear share">
             <div class="fn-right">
 <div class="article__share"
-     data-title="git查询提交记录"
+     data-title="手写call,apply,bind"
      data-blogtitle="FindMyCode"
-     data-url="https://jin821551407.github.io/articles/2024/04/01/1711936168441.html"
+     data-url="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html"
      data-avatar="https://b3logfile.com/avatar/1703064661267_1703235677768.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100">
     <span class="item" data-type="qqz">
         <svg viewBox="0 0 32 32" width="100%" height="100%">
@@ -159,7 +240,7 @@
         <div style="padding: 30px 60px 30px 50px;" id="gitalk-container"></div>
         <div id="b3logsolocomments"></div>
         <div id="vcomment" style="padding: 30px 60px 30px 50px;" data-name="jinyu1222"
-             data-postId="1711936168441"></div>
+             data-postId="1725525546049"></div>
 
 <footer class="footer">
     <div class="fn-clear">
@@ -184,7 +265,7 @@
     version: "4.4.0",
     staticSite: true,
     showCodeBlockLn: false,
-    articleId: "1711936168441",
+    articleId: "1725525546049",
   }
 </script>
 <script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1725525403259"></script>
@@ -194,7 +275,7 @@
     Util.addScript('https://jin821551407.github.io/js/page.min.js?1725525403259', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
-        "oId": "1711936168441",
+        "oId": "1725525546049",
         "blogHost": "https://jin821551407.github.io",
         "randomArticles1Label": "随机阅读：",
         "externalRelevantArticles1Label": "站外相关阅读："
@@ -203,7 +284,7 @@
         page.load();
         page.tips.externalRelevantArticlesDisplayCount = "0";
             page.loadRandomArticles();
-            page.loadRelevantArticles('1711936168441', '<h4>相关阅读：</h4>');
+            page.loadRelevantArticles('1725525546049', '<h4>相关阅读：</h4>');
         page.share()
     });
 </script>
@@ -211,4 +292,4 @@
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 77ms, 2024/09/05 16:39:35 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 80ms, 2024/09/05 16:39:35 -->
