@@ -6,7 +6,7 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Sat, 14 Sep 2024 16:14:48 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2024 16:26:29 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>手写call,apply,bind</title>
@@ -25,8 +25,8 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
-      <category>面试</category>
       <category>js</category>
+      <category>面试</category>
       <category>JavaScript</category>
       <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
     </item>
