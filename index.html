@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/index.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">            <link rel="canonical" href="https://jin821551407.github.io/index.html">            <link rel="stylesheet" href="https://jin821551407.github.io/skins/yilia/css/base.css?1725525403259"/>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/index.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">            <link rel="canonical" href="https://jin821551407.github.io/index.html">            <link rel="stylesheet" href="https://jin821551407.github.io/skins/yilia/css/base.css?1726280821544"/>
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script>    </head>
     <body>
 <div class="side fn__flex-column">
@@ -62,10 +62,10 @@
                         </a>
                     </sup>
             </h2>
-            <time><span class="icon-date"></span> 2024-09-05</time>
+            <time><span class="icon-date"></span> 2024-09-14</time>
         </header>
             <a class="abstract vditor-reset" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
-                手写call,apply,bind /** * 1.call中的this指向是指向调用call的那个函数,直接调用this,这个函数中的this会指向全局,将this绑定到ctx对象中调用,这个函数中的this则会指向传入的ctx * 2.将call中的this绑定到ctx中时,使用Symbol保证此属性值唯一,使用defineProperty保证此属性不可被遍历 * 3.调用完成后将此属性删除,并将返回值返回 * 4.ctx为null或者undefined则ctx赋值为全局对象,否则全转换为Object类型 * 5.apply 和 call 的区别只是传参方式不同,其余都一致 */ Function.prototype.myCall = function (ctx, ...args) { if (ctx === null || ctx === undefined) { ctx = globalThis } else { ctx = Object(ctx) } const key = Symbol('temp') Object.defineProperty(ctx, key, { en....
+                手写call,apply,bind myCall  1.call中的this指向是指向调用call的那个函数,直接调用this,这个函数中的this会指向全局,将this绑定到ctx对象中调用,这个函数中的this则会指向传入的ctx 2.将call中的this绑定到ctx中时,使用Symbol保证此属性值唯一,使用defineProperty保证此属性不可被遍历 3.调用完成后将此属性删除,并将返回值返回 4.ctx为null或者undefined则ctx赋值为全局对象,否则全转换为Object类型 5.apply 和 call 的区别只是传参方式不同,其余都一致  Function.prototype.myCall = function (ctx, ...args) { if (ctx === null || ctx === undefined) { ctx = globalThis } else { ctx = Object(ctx) } const key = Symbol('temp') Object.defineProperty(ctx, key, { enumerable....
             </a>
         <footer class="article__footer fn__flex">
             <span class="icon-tag fn__flex-center"></span>
@@ -256,10 +256,10 @@
     showCodeBlockLn: false,
   }
 </script>
-<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1725525403259"></script>
+<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1726280821544"></script>
 
         </main>
     </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 47ms, 2024/09/05 16:39:34 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 25ms, 2024/09/14 16:01:50 -->
