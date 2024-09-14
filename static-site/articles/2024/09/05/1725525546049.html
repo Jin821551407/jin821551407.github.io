@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写call,apply,bind - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写call,apply,bind - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写call,apply,bind - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">        <link rel="stylesheet"
-              href="https://jin821551407.github.io/skins/yilia/css/base.css?1725525403259"/>
+              href="https://jin821551407.github.io/skins/yilia/css/base.css?1726280821544"/>
             <link rel="prev" title="JS中数据类型的转换" href="https://jin821551407.github.io/articles/2024/08/16/1723796737620.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
@@ -56,6 +56,18 @@
         <li class="toc__h1">
             <a href="#toc_h1_0">手写call,apply,bind</a>
         </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_1">myCall</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_2">myApply</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_3">myBind</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_4">运行示例</a>
+        </li>
 </ul>        </div>
 </div>
 <main>
@@ -66,7 +78,7 @@
                     手写call,apply,bind
                 </a>
             </h2>
-            <time><span class="icon-date"></span> 2024-09-05</time>
+            <time><span class="icon-date"></span> 2024-09-14</time>
         </header>
         <div class="article__footer fn__flex">
             <span class="icon-tag fn__flex-center"></span>
@@ -99,16 +111,17 @@
         </div>
 
         <section class="abstract vditor-reset">
-            <h1 id="toc_h1_0">手写call,apply,bind</h1>
-<pre><code class="language-js">/**
- * 1.call中的this指向是指向调用call的那个函数,直接调用this,这个函数中的this会指向全局,将this绑定到ctx对象中调用,这个函数中的this则会指向传入的ctx
- * 2.将call中的this绑定到ctx中时,使用Symbol保证此属性值唯一,使用defineProperty保证此属性不可被遍历
- * 3.调用完成后将此属性删除,并将返回值返回
- * 4.ctx为null或者undefined则ctx赋值为全局对象,否则全转换为Object类型
- * 5.apply 和 call 的区别只是传参方式不同,其余都一致
- */
-
-Function.prototype.myCall = function (ctx, ...args) {
+            <p><img src="https://b3logfile.com/bing/20181220.jpg?imageView2/1/w/960/h/540/interlace/1/q/100" alt=""></p>
+<h1 id="toc_h1_0">手写call,apply,bind</h1>
+<h2 id="toc_h2_1">myCall</h2>
+<ul>
+<li>1.call中的this指向是指向调用call的那个函数,直接调用this,这个函数中的this会指向全局,将this绑定到ctx对象中调用,这个函数中的this则会指向传入的ctx</li>
+<li>2.将call中的this绑定到ctx中时,使用Symbol保证此属性值唯一,使用defineProperty保证此属性不可被遍历</li>
+<li>3.调用完成后将此属性删除,并将返回值返回</li>
+<li>4.ctx为null或者undefined则ctx赋值为全局对象,否则全转换为Object类型</li>
+<li>5.apply 和 call 的区别只是传参方式不同,其余都一致</li>
+</ul>
+<pre><code class="language-js">Function.prototype.myCall = function (ctx, ...args) {
     if (ctx === null || ctx === undefined) {
         ctx = globalThis
     }
@@ -124,8 +137,9 @@ Function.prototype.myCall = function (ctx, ...args) {
     delete ctx[key]
     return result
 }
-
-Function.prototype.myApply = function (ctx, args) {
+</code></pre>
+<h2 id="toc_h2_2">myApply</h2>
+<pre><code class="language-js">Function.prototype.myApply = function (ctx, args) {
     if (ctx === null || ctx === undefined) {
         ctx = globalThis
     }
@@ -141,13 +155,13 @@ Function.prototype.myApply = function (ctx, args) {
     delete ctx[key]
     return result
 }
-
-/**
- * 1.bind里需要把bind调用时传入的剩余参数和新返回的函数调用传的参数 在调用时一起传入
- * 2.bind返回的新函数可能直接调用也有可能用new方法进行调用
-*/
-
-Function.prototype.myBind = function (ctx, ...args1) {
+</code></pre>
+<h2 id="toc_h2_3">myBind</h2>
+<ul>
+<li>1.bind里需要把bind调用时传入的剩余参数和新返回的函数调用传的参数 在调用时一起传入</li>
+<li>2.bind返回的新函数可能直接调用也有可能用new方法进行调用</li>
+</ul>
+<pre><code class="language-js">Function.prototype.myBind = function (ctx, ...args1) {
     const fn = this
     return function A(...args2) {
         const allArgs = args1.concat(args2)
@@ -158,11 +172,14 @@ Function.prototype.myBind = function (ctx, ...args1) {
         }
     }
 }
-
-function method(a, b) {
+</code></pre>
+<h2 id="toc_h2_4">运行示例</h2>
+<pre><code class="language-js">function method(a, b) {
     console.log(this, ...arguments)
     return a + b
 }
+
+// 手写示例
 method(1, 2)
 method.myCall('ctx', 1, 2)
 method.myApply('ctx', [1, 2])
@@ -172,14 +189,14 @@ const result2 = new newFn(3, 4)
 console.log('result1-----&gt;', result1)
 console.log('result2-----&gt;', result2)
 
-// method.call('ctx', 1, 2)
-// method.apply('ctx', [1, 2])
-// const newFn = method.bind('ctx', 1, 2)
-// const result1 = newFn(3, 4)
-// const result2 = new newFn(3, 4)
-// console.log('result1-----&gt;', result1)
-// console.log('result2-----&gt;', result2)
-
+// 原生方法
+method.call('ctx', 1, 2)
+method.apply('ctx', [1, 2])
+const newFn = method.bind('ctx', 1, 2)
+const result1 = newFn(3, 4)
+const result2 = new newFn(3, 4)
+console.log('result1-----&gt;', result1)
+console.log('result2-----&gt;', result2)
 </code></pre>
                 <div>
                     <hr>
@@ -268,11 +285,11 @@ console.log('result2-----&gt;', result2)
     articleId: "1725525546049",
   }
 </script>
-<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1725525403259"></script>
+<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1726280821544"></script>
 
 
 <script type="text/javascript">
-    Util.addScript('https://jin821551407.github.io/js/page.min.js?1725525403259', 'soloPageScript')
+    Util.addScript('https://jin821551407.github.io/js/page.min.js?1726280821544', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
         "oId": "1725525546049",
@@ -292,4 +309,4 @@ console.log('result2-----&gt;', result2)
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 80ms, 2024/09/05 16:39:35 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 30ms, 2024/09/14 16:01:50 -->
