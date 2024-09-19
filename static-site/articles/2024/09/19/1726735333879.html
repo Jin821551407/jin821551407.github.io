@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写call,apply,bind - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写call,apply,bind - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写call,apply,bind - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">        <link rel="stylesheet"
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>FLIP动画演示 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="FLIP动画演示 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="FLIP动画演示 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">        <link rel="stylesheet"
               href="https://jin821551407.github.io/skins/yilia/css/base.css?1726732598572"/>
-            <link rel="prev" title="JS中数据类型的转换" href="https://jin821551407.github.io/articles/2024/08/16/1723796737620.html">
-            <link rel="next" title="FLIP动画演示" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">
+            <link rel="prev" title="手写call,apply,bind" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
 <div class="side fn__flex-column">
@@ -51,58 +50,35 @@
             <div class="vditor-reset"></div>
         <a rel="alternate" href="https://jin821551407.github.io/rss.xml" title="订阅" class="icon-rss"></a>
     </footer>
-        <div class="toc">
-            <a onclick="$('.side .toc').hide();" href="javascript:void(0)" class="close">X</a>
-<ul class="article__toc">
-        <li class="toc__h1">
-            <a href="#toc_h1_0">手写call,apply,bind</a>
-        </li>
-        <li class="toc__h2">
-            <a href="#toc_h2_1">myCall</a>
-        </li>
-        <li class="toc__h2">
-            <a href="#toc_h2_2">myApply</a>
-        </li>
-        <li class="toc__h2">
-            <a href="#toc_h2_3">myBind</a>
-        </li>
-        <li class="toc__h2">
-            <a href="#toc_h2_4">运行示例</a>
-        </li>
-</ul>        </div>
 </div>
 <main>
     <article class="post">
         <header class="fn__flex">
             <h2 class="fn__flex-1">
-                <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
-                    手写call,apply,bind
+                <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">
+                    FLIP动画演示
                 </a>
             </h2>
-            <time><span class="icon-date"></span> 2024-09-14</time>
+            <time><span class="icon-date"></span> 2024-09-19</time>
         </header>
         <div class="article__footer fn__flex">
             <span class="icon-tag fn__flex-center"></span>
             <span>&nbsp;&nbsp;&nbsp;</span>
             <div class="tags fn__flex-1 fn__flex-center">
-                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/js">
-                        js</a>
-                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/%E9%9D%A2%E8%AF%95">
-                        面试</a>
-                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/JavaScript">
-                        JavaScript</a>
+                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/demo">
+                        demo</a>
             </div>
             <span>&nbsp;&nbsp;&nbsp;</span>
-                <a href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html#b3logsolocomments"
+                <a href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html#b3logsolocomments"
                    class="vditor-tooltipped__n vditor-tooltipped link fn__flex-center"
                    aria-label="评论">
-                    <span data-uvstatcmt="1725525546049">0</span>
+                    <span data-uvstatcmt="1726735333879">0</span>
                     <span class="icon-chat"></span>
                 </a>
             <a class="vditor-tooltipped__n vditor-tooltipped link fn__flex-center"
-               href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html"
+               href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html"
                aria-label="浏览">
-                <span data-uvstaturl="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">0</span>
+                <span data-uvstaturl="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">0</span>
                 <span class="icon-views"></span>
             </a>
             <a rel="nofollow" href="https://jin821551407.github.io/authors/1703064881018" class="fn__flex-center">
@@ -112,112 +88,71 @@
         </div>
 
         <section class="abstract vditor-reset">
-            <p><img src="https://b3logfile.com/bing/20181220.jpg?imageView2/1/w/960/h/540/interlace/1/q/100" alt=""></p>
-<h1 id="toc_h1_0">手写call,apply,bind</h1>
-<h2 id="toc_h2_1">myCall</h2>
-<ul>
-<li>1.call中的this指向是指向调用call的那个函数,直接调用this,这个函数中的this会指向全局,将this绑定到ctx对象中调用,这个函数中的this则会指向传入的ctx</li>
-<li>2.将call中的this绑定到ctx中时,使用Symbol保证此属性值唯一,使用defineProperty保证此属性不可被遍历</li>
-<li>3.调用完成后将此属性删除,并将返回值返回</li>
-<li>4.ctx为null或者undefined则ctx赋值为全局对象,否则全转换为Object类型</li>
-<li>5.apply 和 call 的区别只是传参方式不同,其余都一致</li>
-</ul>
-<pre><code class="language-js">Function.prototype.myCall = function (ctx, ...args) {
-    if (ctx === null || ctx === undefined) {
-        ctx = globalThis
-    }
-    else {
-        ctx = Object(ctx)
-    }
-    const key = Symbol('temp')
-    Object.defineProperty(ctx, key, {
-        enumerable: false,
-        value: this
-    })
-    const result = ctx[key](...args)
-    delete ctx[key]
-    return result
-}
-</code></pre>
-<h2 id="toc_h2_2">myApply</h2>
-<pre><code class="language-js">Function.prototype.myApply = function (ctx, args) {
-    if (ctx === null || ctx === undefined) {
-        ctx = globalThis
-    }
-    else {
-        ctx = Object(ctx)
-    }
-    const key = Symbol('temp')
-    Object.defineProperty(ctx, key, {
-        enumerable: false,
-        value: this
-    })
-    const result = ctx[key](...args)
-    delete ctx[key]
-    return result
-}
-</code></pre>
-<h2 id="toc_h2_3">myBind</h2>
-<ul>
-<li>1.bind里需要把bind调用时传入的剩余参数和新返回的函数调用传的参数 在调用时一起传入</li>
-<li>2.bind返回的新函数可能直接调用也有可能用new方法进行调用</li>
-</ul>
-<pre><code class="language-js">Function.prototype.myBind = function (ctx, ...args1) {
-    const fn = this
-    return function A(...args2) {
-        const allArgs = args1.concat(args2)
-        if (Object.getPrototypeOf(this) === A.prototype) {
-            return new fn(...allArgs)
-        } else {
-            return fn.apply(ctx, allArgs)
-        }
-    }
-}
-</code></pre>
-<h2 id="toc_h2_4">运行示例</h2>
-<pre><code class="language-js">function method(a, b) {
-    console.log(this, ...arguments)
-    return a + b
-}
+            <div class="contariner">
+        <button class="btn">点击我</button>
+        <div class="list">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+        </div>
+    </div>
 
-// 手写示例
-method(1, 2)
-method.myCall('ctx', 1, 2)
-method.myApply('ctx', [1, 2])
-const newFn = method.myBind('ctx', 1, 2)
-const result1 = newFn(3, 4)
-const result2 = new newFn(3, 4)
-console.log('result1-----&gt;', result1)
-console.log('result2-----&gt;', result2)
-
-// 原生方法
-method.call('ctx', 1, 2)
-method.apply('ctx', [1, 2])
-const newFn = method.bind('ctx', 1, 2)
-const result1 = newFn(3, 4)
-const result2 = new newFn(3, 4)
-console.log('result1-----&gt;', result1)
-console.log('result2-----&gt;', result2)
-</code></pre>
+<style>
+    .btn {
+        margin-bottom: 10px;
+    }
+    .box {
+        margin-bottom: 10px;
+        border: 1px solid #666;
+        width: 120px;
+        text-align: center;
+        border-radius: 4px;
+    }
+</style>
+<script>
+    const btn = document.querySelector('.btn')
+    const list = document.querySelector('.list')
+    btn.addEventListener('click', function () {
+        const item = document.querySelectorAll('.box')[0]
+        // F    记录初始位置
+        const startLocation = getLocation(item)
+        // 变换到结束位置
+        list.insertBefore(item, null)
+        // L    记录结束位置
+        const endLocation = getLocation(item)
+        // I    反转    使用transform进行修正
+        item.style.transform = `translateY(${startLocation.top - endLocation.top}px)`
+        // P    播放
+        requestAnimationFrame(function () {
+            item.style.transition = 'transform 1s'
+            item.style.removeProperty('transform')
+        })
+    })
+    function getLocation(item) {
+        return item.getBoundingClientRect()
+    }
+</script>
                 <div>
                     <hr>
 
-标题：手写call,apply,bind<br>
+标题：FLIP动画演示<br>
 作者：<a href="https://jin821551407.github.io" target="_blank">jinyu1222</a><br>
-地址：<a href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html" target="_blank">https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</a><br>
+地址：<a href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html" target="_blank">https://jin821551407.github.io/articles/2024/09/19/1726735333879.html</a><br>
 
 <!-- 签名档内可使用 HTML、JavaScript -->
 <br>
                 </div>
 
                 <aside class="fn__flex">
-                        <a class="fn__flex-1 fn__flex-inline" rel="prev" href="https://jin821551407.github.io/articles/2024/08/16/1723796737620.html">
+                        <a class="fn__flex-1 fn__flex-inline" rel="prev" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
                             <strong>&lt;</strong>
-                            <span>&nbsp; JS中数据类型的转换&nbsp;&nbsp;&nbsp;</span>
-                        </a>
-                        <a class="fn__flex-inline" rel="next" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">
-                            <span>FLIP动画演示&nbsp; </span>
-                            <strong>&gt;</strong>
+                            <span>&nbsp; 手写call,apply,bind&nbsp;&nbsp;&nbsp;</span>
                         </a>
                 </aside>
         </section>
@@ -225,9 +160,9 @@ console.log('result2-----&gt;', result2)
         <footer class="fn-clear share">
             <div class="fn-right">
 <div class="article__share"
-     data-title="手写call,apply,bind"
+     data-title="FLIP动画演示"
      data-blogtitle="FindMyCode"
-     data-url="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html"
+     data-url="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html"
      data-avatar="https://b3logfile.com/avatar/1703064661267_1703235677768.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100">
     <span class="item" data-type="qqz">
         <svg viewBox="0 0 32 32" width="100%" height="100%">
@@ -262,7 +197,7 @@ console.log('result2-----&gt;', result2)
         <div style="padding: 30px 60px 30px 50px;" id="gitalk-container"></div>
         <div id="b3logsolocomments"></div>
         <div id="vcomment" style="padding: 30px 60px 30px 50px;" data-name="jinyu1222"
-             data-postId="1725525546049"></div>
+             data-postId="1726735333879"></div>
 
 <footer class="footer">
     <div class="fn-clear">
@@ -287,7 +222,7 @@ console.log('result2-----&gt;', result2)
     version: "4.4.0",
     staticSite: true,
     showCodeBlockLn: false,
-    articleId: "1725525546049",
+    articleId: "1726735333879",
   }
 </script>
 <script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1726732598572"></script>
@@ -297,7 +232,7 @@ console.log('result2-----&gt;', result2)
     Util.addScript('https://jin821551407.github.io/js/page.min.js?1726732598572', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
-        "oId": "1725525546049",
+        "oId": "1726735333879",
         "blogHost": "https://jin821551407.github.io",
         "randomArticles1Label": "随机阅读：",
         "externalRelevantArticles1Label": "站外相关阅读："
@@ -306,7 +241,7 @@ console.log('result2-----&gt;', result2)
         page.load();
         page.tips.externalRelevantArticlesDisplayCount = "0";
             page.loadRandomArticles();
-            page.loadRelevantArticles('1725525546049', '<h4>相关阅读：</h4>');
+            page.loadRelevantArticles('1726735333879', '<h4>相关阅读：</h4>');
         page.share()
     });
 </script>
@@ -314,4 +249,4 @@ console.log('result2-----&gt;', result2)
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 41ms, 2024/09/19 16:42:42 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 32ms, 2024/09/19 16:42:42 -->
