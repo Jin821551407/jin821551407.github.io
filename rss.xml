@@ -6,8 +6,29 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Thu, 19 Sep 2024 17:02:44 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2024 22:05:40 +0800</lastBuildDate>
     <language>zh-cn</language>
+    <item>
+      <title>手写Promise: 2.then方法返回的时机</title>
+      <link>https://jin821551407.github.io/articles/2024/12/29/1735481128434.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2024/12/29/1735481128434.html</guid>
+      <category>promise</category>
+      <pubDate>Sun, 29 Dec 2024 22:05:28 +0800</pubDate>
+    </item>
+    <item>
+      <title>手写Promise: 1.构造器的实现</title>
+      <link>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</guid>
+      <category>面试</category>
+      <category>promise</category>
+      <category>js</category>
+      <category>手写</category>
+      <pubDate>Sun, 29 Dec 2024 21:47:05 +0800</pubDate>
+    </item>
     <item>
       <title>FLIP动画演示</title>
       <link>https://jin821551407.github.io/articles/2024/09/19/1726735333879.html</link>
@@ -15,7 +36,7 @@
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/09/19/1726735333879.html</guid>
       <category>demo</category>
-      <pubDate>Thu, 19 Sep 2024 17:02:33 +0800</pubDate>
+      <pubDate>Thu, 31 Oct 2024 09:55:26 +0800</pubDate>
     </item>
     <item>
       <title>手写call,apply,bind</title>
@@ -34,9 +55,9 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
-      <category>js</category>
       <category>JavaScript</category>
       <category>面试</category>
+      <category>js</category>
       <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
     </item>
     <item>
