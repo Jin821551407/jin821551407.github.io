@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>FLIP动画演示 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="FLIP动画演示 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="FLIP动画演示 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">        <link rel="stylesheet"
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写Promise: 2.then方法返回的时机 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写Promise: 2.then方法返回的时机 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写Promise: 2.then方法返回的时机 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html">        <link rel="stylesheet"
               href="https://jin821551407.github.io/skins/yilia/css/base.css?1735479805194"/>
-            <link rel="prev" title="手写call,apply,bind" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
-            <link rel="next" title="手写Promise: 1.构造器的实现" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">
+            <link rel="prev" title="手写Promise: 1.构造器的实现" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
 <div class="side fn__flex-column">
@@ -56,30 +55,30 @@
     <article class="post">
         <header class="fn__flex">
             <h2 class="fn__flex-1">
-                <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">
-                    FLIP动画演示
+                <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html">
+                    手写Promise: 2.then方法返回的时机
                 </a>
             </h2>
-            <time><span class="icon-date"></span> 2024-10-31</time>
+            <time><span class="icon-date"></span> 2024-12-29</time>
         </header>
         <div class="article__footer fn__flex">
             <span class="icon-tag fn__flex-center"></span>
             <span>&nbsp;&nbsp;&nbsp;</span>
             <div class="tags fn__flex-1 fn__flex-center">
-                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/demo">
-                        demo</a>
+                    <a class="tag" rel="tag" href="https://jin821551407.github.io/tags/promise">
+                        promise</a>
             </div>
             <span>&nbsp;&nbsp;&nbsp;</span>
-                <a href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html#b3logsolocomments"
+                <a href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html#b3logsolocomments"
                    class="vditor-tooltipped__n vditor-tooltipped link fn__flex-center"
                    aria-label="评论">
-                    <span data-uvstatcmt="1726735333879">0</span>
+                    <span data-uvstatcmt="1735481128434">0</span>
                     <span class="icon-chat"></span>
                 </a>
             <a class="vditor-tooltipped__n vditor-tooltipped link fn__flex-center"
-               href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html"
+               href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html"
                aria-label="浏览">
-                <span data-uvstaturl="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">0</span>
+                <span data-uvstaturl="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html">0</span>
                 <span class="icon-views"></span>
             </a>
             <a rel="nofollow" href="https://jin821551407.github.io/authors/1703064881018" class="fn__flex-center">
@@ -89,81 +88,82 @@
         </div>
 
         <section class="abstract vditor-reset">
-            <div class="contariner">
-        <button class="btn">点击我</button>
-        <div class="list">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-            <div class="box">4</div>
-            <div class="box">5</div>
-            <div class="box">6</div>
-            <div class="box">7</div>
-            <div class="box">8</div>
-            <div class="box">9</div>
-        </div>
-    </div>
+            <pre><code class="language-js">class MyPromise {
+    PENDING = 'pending'
+    FULLFILLED = 'fullfilled'
+    REJECTED = 'rejected'
+    _handlers = []
+    constructor(excutor) {
+        this._state = this.PENDING
+        this._result = undefined
+        const resolve = (data) =&gt; {
+            this._changeState(data, this.FULLFILLED)
+        }
+        const reject = (reason) =&gt; {
+            this._changeState(reason, this.REJECTED)
+        }
+        excutor(resolve, reject)
+    }
+    _changeState(result, state) {
+        if (this._state !== this.PENDING) return
+        this._result = result
+        this._state = state
+        this._run()
+    }
+    // 执行当前调用then的回调队列
+    _run() {
+        while (this._handlers.length) {
+            const { onFullfilled, onRejcted, resolve, reject } = this._handlers.unshift()
+            if (this._state === this.FULLFILLED) {
+                this._runOne(onFullfilled, resolve, reject)
+            } else if (this._state === this.REJECTED) {
+                this._runOne(onRejcted, resolve, reject)
+            }
+        }
+    }
+    _runOne(callback, resolve, reject) {
+        callback(this._state)
+    }
+    /**
+     * MyPromise返回一个新的Promise
+     * 当前成功则调用onFullfiled
+     * 当前失败则调用onRejected
+     * 什么时候调用成功或者失败取决于调用then的promise的状态
+     * 在调用then的时候promise可能是pending fullfilled 或者 rejected 中的一种
+     * 所以无法立即执行,需要在_changeState里进行执行
+     * */
 
-<style>
-    .btn {
-        width: 80px;
-        border-radius: 4px;
-        padding: 4px;
-        margin-bottom: 20px;
-        border: none;
-        color: #666;
-    }
-    .box {
-        margin-bottom: 10px;
-        border: 1px solid #666;
-        width: 120px;
-        text-align: center;
-        border-radius: 4px;
-    }
-</style>
-<script>
-    const btn = document.querySelector('.btn')
-    const list = document.querySelector('.list')
-    btn.addEventListener('click', function () {
-        const item = document.querySelectorAll('.box')[0]
-	item.style.transition = ''
-        // F    记录初始位置
-        const startLocation = getLocation(item)
-        // 变换到结束位置
-        list.insertBefore(item, null)
-        // L    记录结束位置
-        const endLocation = getLocation(item)
-        // I    反转    使用transform进行修正
-        item.style.transform = `translateY(${startLocation.top - endLocation.top}px)`
-        // P    播放
-        requestAnimationFrame(function () {
-            item.style.transition = 'transform 1s'
-            item.style.removeProperty('transform')
+    then(onFullfilled, onRejcted) {
+        return new MyPromise((resolve, reject) =&gt; {
+            //在此处需要将 onFullfilled onRejcted resolve reject存起来 等到状态改变了再调用
+            // 又因为then方法会多次调用 所以 以上四个方法也会被多次存储
+            this._handlers.push({
+                onFullfilled,
+                onRejcted,
+                resolve,
+                reject
+            })
+            // 这里先执行_run是因为当前状态可能已经是改变了的
+            this._run()
         })
-    })
-    function getLocation(item) {
-        return item.getBoundingClientRect()
     }
-</script>
+}
+</code></pre>
                 <div>
                     <hr>
 
-标题：FLIP动画演示<br>
+标题：手写Promise: 2.then方法返回的时机<br>
 作者：<a href="https://jin821551407.github.io" target="_blank">jinyu1222</a><br>
-地址：<a href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html" target="_blank">https://jin821551407.github.io/articles/2024/09/19/1726735333879.html</a><br>
+地址：<a href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html" target="_blank">https://jin821551407.github.io/articles/2024/12/29/1735481128434.html</a><br>
 
 <!-- 签名档内可使用 HTML、JavaScript -->
 <br>
                 </div>
 
                 <aside class="fn__flex">
-                        <a class="fn__flex-1 fn__flex-inline" rel="prev" href="https://jin821551407.github.io/articles/2024/09/05/1725525546049.html">
+                        <a class="fn__flex-1 fn__flex-inline" rel="prev" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">
                             <strong>&lt;</strong>
-                            <span>&nbsp; 手写call,apply,bind&nbsp;&nbsp;&nbsp;</span>
-                        </a>
-                        <a class="fn__flex-inline" rel="next" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">
-                            <span>手写Promise: 1.构造器的实现&nbsp; </span>
-                            <strong>&gt;</strong>
+                            <span>&nbsp; 手写Promise: 1.构造器的实现&nbsp;&nbsp;&nbsp;</span>
                         </a>
                 </aside>
         </section>
@@ -171,9 +171,9 @@
         <footer class="fn-clear share">
             <div class="fn-right">
 <div class="article__share"
-     data-title="FLIP动画演示"
+     data-title="手写Promise: 2.then方法返回的时机"
      data-blogtitle="FindMyCode"
-     data-url="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html"
+     data-url="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html"
      data-avatar="https://b3logfile.com/avatar/1703064661267_1703235677768.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100">
     <span class="item" data-type="qqz">
         <svg viewBox="0 0 32 32" width="100%" height="100%">
@@ -208,7 +208,7 @@
         <div style="padding: 30px 60px 30px 50px;" id="gitalk-container"></div>
         <div id="b3logsolocomments"></div>
         <div id="vcomment" style="padding: 30px 60px 30px 50px;" data-name="jinyu1222"
-             data-postId="1726735333879"></div>
+             data-postId="1735481128434"></div>
 
 <footer class="footer">
     <div class="fn-clear">
@@ -233,7 +233,7 @@
     version: "4.4.0",
     staticSite: true,
     showCodeBlockLn: false,
-    articleId: "1726735333879",
+    articleId: "1735481128434",
   }
 </script>
 <script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1735479805194"></script>
@@ -243,7 +243,7 @@
     Util.addScript('https://jin821551407.github.io/js/page.min.js?1735479805194', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
-        "oId": "1726735333879",
+        "oId": "1735481128434",
         "blogHost": "https://jin821551407.github.io",
         "randomArticles1Label": "随机阅读：",
         "externalRelevantArticles1Label": "站外相关阅读："
@@ -252,7 +252,7 @@
         page.load();
         page.tips.externalRelevantArticlesDisplayCount = "0";
             page.loadRandomArticles();
-            page.loadRelevantArticles('1726735333879', '<h4>相关阅读：</h4>');
+            page.loadRelevantArticles('1735481128434', '<h4>相关阅读：</h4>');
         page.share()
     });
 </script>
@@ -260,4 +260,4 @@
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 43ms, 2024/12/29 22:05:41 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 51ms, 2024/12/29 22:05:41 -->
