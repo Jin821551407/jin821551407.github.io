@@ -6,7 +6,7 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Sun, 29 Dec 2024 22:05:40 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jan 2025 19:54:10 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>手写Promise: 2.then方法返回的时机</title>
@@ -15,7 +15,7 @@
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/12/29/1735481128434.html</guid>
       <category>promise</category>
-      <pubDate>Sun, 29 Dec 2024 22:05:28 +0800</pubDate>
+      <pubDate>Sun, 29 Dec 2024 22:24:28 +0800</pubDate>
     </item>
     <item>
       <title>手写Promise: 1.构造器的实现</title>
@@ -23,11 +23,11 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</guid>
-      <category>面试</category>
-      <category>promise</category>
       <category>js</category>
+      <category>promise</category>
+      <category>面试</category>
       <category>手写</category>
-      <pubDate>Sun, 29 Dec 2024 21:47:05 +0800</pubDate>
+      <pubDate>Sun, 29 Dec 2024 22:22:53 +0800</pubDate>
     </item>
     <item>
       <title>FLIP动画演示</title>
@@ -45,8 +45,8 @@
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</guid>
       <category>JavaScript</category>
-      <category>面试</category>
       <category>js</category>
+      <category>面试</category>
       <pubDate>Sat, 14 Sep 2024 16:01:39 +0800</pubDate>
     </item>
     <item>
@@ -55,9 +55,9 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
-      <category>JavaScript</category>
-      <category>面试</category>
       <category>js</category>
+      <category>面试</category>
+      <category>JavaScript</category>
       <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
     </item>
     <item>
@@ -66,8 +66,8 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</guid>
-      <category>面试</category>
       <category>vue</category>
+      <category>面试</category>
       <pubDate>Thu, 27 Jun 2024 11:06:47 +0800</pubDate>
     </item>
     <item>
