@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写Promise的实现 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写Promise的实现 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写Promise的实现 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">        <link rel="stylesheet"
-              href="https://jin821551407.github.io/skins/yilia/css/base.css?1735992173991"/>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>Promise的实现 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="Promise的实现 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="Promise的实现 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">        <link rel="stylesheet"
+              href="https://jin821551407.github.io/skins/yilia/css/base.css?1735999111969"/>
             <link rel="prev" title="FLIP动画演示" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
@@ -50,13 +50,41 @@
             <div class="vditor-reset"></div>
         <a rel="alternate" href="https://jin821551407.github.io/rss.xml" title="订阅" class="icon-rss"></a>
     </footer>
+        <div class="toc">
+            <a onclick="$('.side .toc').hide();" href="javascript:void(0)" class="close">X</a>
+<ul class="article__toc">
+        <li class="toc__h1">
+            <a href="#toc_h1_0">Promise的实现</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_1">1.构造器的实现</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_2">2.then方法返回的时机和返回值</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_3">3.then方法回调的执行 以及 返回值的状态</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_4">4.微队列和PromiseLike</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_5">5.实例方法finally和catch的实现</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_6">6.静态方法resolve和reject的实现</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_7">7.静态方法all allSettled race 的实现</a>
+        </li>
+</ul>        </div>
 </div>
 <main>
     <article class="post">
         <header class="fn__flex">
             <h2 class="fn__flex-1">
                 <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">
-                    手写Promise的实现
+                    Promise的实现
                 </a>
             </h2>
             <time><span class="icon-date"></span> 2025-01-04</time>
@@ -94,15 +122,11 @@
         </div>
 
         <section class="abstract vditor-reset">
-            <ul>
-<li>
-<p>手写Promise的实现</p>
-<p>github链接: <a href="https://github.com/Jin821551407/MyPromise.git" target="_blank">https://github.com/Jin821551407/MyPromise.git</a></p>
-</li>
+            <h1 id="toc_h1_0">Promise的实现</h1>
+<ul>
+<li>github链接: <a href="https://github.com/Jin821551407/MyPromise.git" target="_blank">https://github.com/Jin821551407/MyPromise.git</a></li>
 </ul>
-<ol>
-<li>
-<p>构造器的实现</p>
+<h2 id="toc_h2_1">1.构造器的实现</h2>
 <p>一个 <strong><code>Promise</code></strong> 是一个代理，它代表一个在创建 promise 时不一定已知的值。它允许你将处理程序与异步操作的最终成功值或失败原因关联起来。这使得异步方法可以像同步方法一样返回值：异步方法不会立即返回最终值，而是返回一个 <em>promise</em> ，以便在将来的某个时间点提供该值。</p>
 <p>一个 <code>Promise</code> 必然处于以下几种状态之一：</p>
 <ul>
@@ -137,10 +161,8 @@
     }
 }
 </code></pre>
-</li>
-<li>
-<p>then方法返回的时机和返回值<br>
-<strong><code>then</code></strong> 方法立即返回一个等效的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank"><code>Promise</code></a> 对象，允许你链接到其他 Promise 方法</p>
+<h2 id="toc_h2_2">2.then方法返回的时机和返回值</h2>
+<p><strong><code>then</code></strong> 方法立即返回一个等效的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank"><code>Promise</code></a> 对象，允许你链接到其他 Promise 方法</p>
 <pre><code class="language-js">
     /**
      * MyPromise返回一个新的Promise
@@ -166,9 +188,7 @@
         })
     }
 </code></pre>
-</li>
-<li>
-<p>then方法回调的执行 以及 返回值的状态</p>
+<h2 id="toc_h2_3">3.then方法回调的执行 以及 返回值的状态</h2>
 <p>在改变状态时根据改变后的状态调用 onFullfilled 或者 onRejected</p>
 <p>then方法返回值的状态取决于onFullfilled onRejected 是什么  返回什么 以及在执行过程中是否抛出错误</p>
 <ul>
@@ -222,9 +242,7 @@
         })
     }
 </code></pre>
-</li>
-<li>
-<p>微队列和PromiseLike</p>
+<h2 id="toc_h2_4">4.微队列和PromiseLike</h2>
 <ul>
 <li>
 <p>then的回调方法是异步执行,应该在微队列中执行</p>
@@ -259,9 +277,7 @@
 </code></pre>
 </li>
 </ul>
-</li>
-<li>
-<p>实例方法finally和catch的实现</p>
+<h2 id="toc_h2_5">5.实例方法finally和catch的实现</h2>
 <pre><code class="language-js">/**
      * Promise 实例的 finally() 方法用于注册一个在 promise 敲定（兑现或拒绝）时调用的函数。
      * 它会立即返回一个等效的 Promise 对象，这可以允许你链式调用其他 promise 方法。
@@ -285,9 +301,7 @@
         return this.then(undefined, onRejected)
     }
 </code></pre>
-</li>
-<li>
-<p>静态方法resolve和reject的实现</p>
+<h2 id="toc_h2_6">6.静态方法resolve和reject的实现</h2>
 <pre><code class="language-js">/**
      * @param {any} value
      * Promise.resolve() 静态方法以给定值“解决（resolve）”一个 Promise。
@@ -321,11 +335,7 @@
         })
     }
 </code></pre>
-</li>
-<li>
-<p>静态方法all allSettled race 的实现</p>
-</li>
-</ol>
+<h2 id="toc_h2_7">7.静态方法all allSettled race 的实现</h2>
 <pre><code class="language-js">/**
      * Promise.all() 静态方法接受一个 Promise 可迭代对象作为输入，并返回一个 Promise。
      * 当所有输入的 Promise 都被兑现时，返回的 Promise 也将被兑现（即使传入的是一个空的可迭代对象），并返回一个包含所有兑现值的数组。
@@ -406,7 +416,7 @@
                 <div>
                     <hr>
 
-标题：手写Promise的实现<br>
+标题：Promise的实现<br>
 作者：<a href="https://jin821551407.github.io" target="_blank">jinyu1222</a><br>
 地址：<a href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html" target="_blank">https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</a><br>
 
@@ -425,7 +435,7 @@
         <footer class="fn-clear share">
             <div class="fn-right">
 <div class="article__share"
-     data-title="手写Promise的实现"
+     data-title="Promise的实现"
      data-blogtitle="FindMyCode"
      data-url="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html"
      data-avatar="https://b3logfile.com/avatar/1703064661267_1703235677768.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100">
@@ -490,11 +500,11 @@
     articleId: "1735480010074",
   }
 </script>
-<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1735992173991"></script>
+<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1735999111969"></script>
 
 
 <script type="text/javascript">
-    Util.addScript('https://jin821551407.github.io/js/page.min.js?1735992173991', 'soloPageScript')
+    Util.addScript('https://jin821551407.github.io/js/page.min.js?1735999111969', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
         "oId": "1735480010074",
@@ -514,4 +524,4 @@
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 40ms, 2025/01/04 21:39:27 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 42ms, 2025/01/04 22:02:46 -->
