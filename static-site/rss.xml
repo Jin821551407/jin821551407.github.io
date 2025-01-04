@@ -6,19 +6,19 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Sat, 04 Jan 2025 21:39:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jan 2025 22:02:46 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
-      <title>手写Promise的实现</title>
+      <title>Promise的实现</title>
       <link>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</link>
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</guid>
+      <category>promise</category>
+      <category>手写</category>
       <category>js</category>
       <category>面试</category>
-      <category>手写</category>
-      <category>promise</category>
-      <pubDate>Sat, 04 Jan 2025 21:39:06 +0800</pubDate>
+      <pubDate>Sat, 04 Jan 2025 22:02:41 +0800</pubDate>
     </item>
     <item>
       <title>FLIP动画演示</title>
@@ -35,9 +35,9 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</guid>
+      <category>面试</category>
       <category>JavaScript</category>
       <category>js</category>
-      <category>面试</category>
       <pubDate>Sat, 14 Sep 2024 16:01:39 +0800</pubDate>
     </item>
     <item>
@@ -46,9 +46,9 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
+      <category>js</category>
       <category>面试</category>
       <category>JavaScript</category>
-      <category>js</category>
       <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
     </item>
     <item>
