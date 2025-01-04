@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写Promise: 1.构造器的实现 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写Promise: 1.构造器的实现 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写Promise: 1.构造器的实现 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">        <link rel="stylesheet"
-              href="https://jin821551407.github.io/skins/yilia/css/base.css?1735991137299"/>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>手写Promise的实现 - FindMyCode</title><meta name="description" content=""/><meta property="og:description" content=""/>    <meta name="keywords" content="web,js,vue,node"/><link rel="dns-prefetch" href="https://jin821551407.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://jin821551407.github.io"><link rel="icon" type="image/png" href="https://b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="手写Promise的实现 - FindMyCode"/><meta property="og:site_name" content="FindMyCode"/><meta property="og:url"      content="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html?"/><meta property="og:image" content="https://b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="手写Promise的实现 - FindMyCode" href="/opensearch.xml"><link href="https://jin821551407.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://jin821551407.github.io/manifest.json">        <link rel="canonical" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">        <link rel="stylesheet"
+              href="https://jin821551407.github.io/skins/yilia/css/base.css?1735992173991"/>
             <link rel="prev" title="FLIP动画演示" href="https://jin821551407.github.io/articles/2024/09/19/1726735333879.html">
-            <link rel="next" title="手写Promise: 2.then方法返回的时机" href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.4/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
 <div class="side fn__flex-column">
@@ -57,10 +56,10 @@
         <header class="fn__flex">
             <h2 class="fn__flex-1">
                 <a rel="bookmark" href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html">
-                    手写Promise: 1.构造器的实现
+                    手写Promise的实现
                 </a>
             </h2>
-            <time><span class="icon-date"></span> 2024-12-29</time>
+            <time><span class="icon-date"></span> 2025-01-04</time>
         </header>
         <div class="article__footer fn__flex">
             <span class="icon-tag fn__flex-center"></span>
@@ -95,7 +94,23 @@
         </div>
 
         <section class="abstract vditor-reset">
-            <pre><code class="language-js">class MyPromise {
+            <ul>
+<li>
+<p>手写Promise的实现</p>
+<p>github链接: <a href="https://github.com/Jin821551407/MyPromise.git" target="_blank">https://github.com/Jin821551407/MyPromise.git</a></p>
+</li>
+</ul>
+<ol>
+<li>
+<p>构造器的实现</p>
+<p>一个 <strong><code>Promise</code></strong> 是一个代理，它代表一个在创建 promise 时不一定已知的值。它允许你将处理程序与异步操作的最终成功值或失败原因关联起来。这使得异步方法可以像同步方法一样返回值：异步方法不会立即返回最终值，而是返回一个 <em>promise</em> ，以便在将来的某个时间点提供该值。</p>
+<p>一个 <code>Promise</code> 必然处于以下几种状态之一：</p>
+<ul>
+<li><em>待定（pending）</em> ：初始状态，既没有被兑现，也没有被拒绝。</li>
+<li><em>已兑现（fulfilled）</em> ：意味着操作成功完成。</li>
+<li><em>已拒绝（rejected）</em> ：意味着操作失败。</li>
+</ul>
+<pre><code class="language-js">class MyPromise {
     PENDING = 'pending'
     FULLFILLED = 'fullfilled'
     REJECTED = 'rejected'
@@ -122,10 +137,276 @@
     }
 }
 </code></pre>
+</li>
+<li>
+<p>then方法返回的时机和返回值<br>
+<strong><code>then</code></strong> 方法立即返回一个等效的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank"><code>Promise</code></a> 对象，允许你链接到其他 Promise 方法</p>
+<pre><code class="language-js">
+    /**
+     * MyPromise返回一个新的Promise
+     * 当前成功则调用onFullfiled
+     * 当前失败则调用onRejected
+     * 什么时候调用成功或者失败取决于调用then的promise的状态
+     * 在调用then的时候promise可能是pending fullfilled 或者 rejected 中的一种
+     * 所以可能无法立即执行,需要在_changeState里进行执行
+     * */
+
+    then(onFullfilled, onRejcted) {
+        return new MyPromise((resolve, reject) =&gt; {
+            //在此处需要将 onFullfilled onRejcted resolve reject存起来 等到状态改变了再调用
+            // 又因为then方法会多次调用 所以 以上四个方法也会被多次存储
+            this._handlers.push({
+                onFullfilled,
+                onRejcted,
+                resolve,
+                reject
+            })
+            // 这里先执行_run是因为当前状态可能已经是改变了的
+            this._run()
+        })
+    }
+</code></pre>
+</li>
+<li>
+<p>then方法回调的执行 以及 返回值的状态</p>
+<p>在改变状态时根据改变后的状态调用 onFullfilled 或者 onRejected</p>
+<p>then方法返回值的状态取决于onFullfilled onRejected 是什么  返回什么 以及在执行过程中是否抛出错误</p>
+<ul>
+<li>1.callback不是一个函数,则直接穿透由调用then的promise决定</li>
+<li>2.then的返回值是一个PromiseLike 则由这个PromiseLike来决定</li>
+<li>3.then的返回值不是一个PromiseLike, 则直接resolve</li>
+</ul>
+<pre><code class="language-js">
+    _changeState(result, state) {
+        if (this._state !== this.PENDING) return
+        this._result = result
+        this._state = state
+        this._run()
+    }
+    // 执行当前调用then的回调队列
+    _run() {
+        if (this._state === this.PENDING) return
+        while (this._handlers.length) {
+            const { onFullfilled, onRejcted, resolve, reject } = this._handlers.unshift()
+            if (this._state === this.FULLFILLED) {
+                this._runOne(onFullfilled, resolve, reject)
+            } else if (this._state === this.REJECTED) {
+                this._runOne(onRejcted, resolve, reject)
+            }
+        }
+    }
+    _runOne(callback, resolve, reject) {
+        this._runMicroTask(() =&gt; {
+            /**
+             * then方法返回值取决于callback返回什么
+             * 1.callback不是一个函数,则直接穿透由调用then的promise决定
+             * 2.then的返回值是一个PromiseLike 则由这个PromiseLike来决定
+             * 3.then的返回值不是一个PromiseLike, 则直接resolve
+             */
+
+            if (typeof callback === 'function') {
+                try {
+                    const data = callback(this._result)
+                    if (this._isPromiseLike(data)) {
+                        data.then(resolve, reject)
+                    } else {
+                        resolve(data)
+                    }
+                } catch (error) {
+                    reject(error)
+                }
+            } else {
+                this._state === this.FULLFILLED ? resolve : reject
+                settled(this._result)
+            }
+        })
+    }
+</code></pre>
+</li>
+<li>
+<p>微队列和PromiseLike</p>
+<ul>
+<li>
+<p>then的回调方法是异步执行,应该在微队列中执行</p>
+</li>
+<li>
+<p>Promise A+规范规定一个函数或者对象 具有then方法便是 Promise对象, 即一个thenable对象或者函数都可以看作是PomiseLike</p>
+<pre><code class="language-js">
+    // 判断一个值是不是PromiseLike (是一个函数或者方法且具有then方法)
+    _isPromiseLike(value) {
+        return value !== null &amp;&amp; (typeof value === 'object' || typeof value === 'function') &amp;&amp; typeof value.then === 'function'
+    }
+    // 将then方法的回调放到微队列里执行
+    _runMicroTask(func) {
+        /**
+         * 1.如果是node环境
+         * 2.如果是浏览器环境
+         * 3.如果是非主流环境
+         */
+        if (typeof process === 'object' &amp;&amp; typeof process.nextTick === 'function') {
+            process.nextTick(func)
+        } else if (typeof MutationObserver === 'function') {
+            const ob = new MutationObserver(func)
+            const textNode = document.createTextNode('1')
+            ob.observe(textNode, {
+                characterData: true
+            })
+            textNode = '2'
+        } else {
+            setTimeout(func, 0)
+        }
+    }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>实例方法finally和catch的实现</p>
+<pre><code class="language-js">/**
+     * Promise 实例的 finally() 方法用于注册一个在 promise 敲定（兑现或拒绝）时调用的函数。
+     * 它会立即返回一个等效的 Promise 对象，这可以允许你链式调用其他 promise 方法。
+     * 这可以让你避免在  promise 的 then() 和 catch() 处理器中重复编写代码。
+     */
+    finally(onFinally) {
+        return this.then(() =&gt; {
+            const data = onFinally()
+            return data
+        }, () =&gt; {
+            const reason = onFinally()
+            return reason
+        })
+    }
+    /**
+     * Promise 实例的 catch() 方法用于注册一个在 promise 被拒绝时调用的函数。
+     * 它会立即返回一个等效的 Promise 对象，这可以允许你链式调用其他 promise 的方法。
+     * 此方法是 Promise.prototype.then(undefined, onRejected) 的一种简写形式。
+     */
+    catch(onRejected) {
+        return this.then(undefined, onRejected)
+    }
+</code></pre>
+</li>
+<li>
+<p>静态方法resolve和reject的实现</p>
+<pre><code class="language-js">/**
+     * @param {any} value
+     * Promise.resolve() 静态方法以给定值“解决（resolve）”一个 Promise。
+     * 如果该值本身就是一个 Promise，那么该 Promise 将被返回
+     * 如果该值是一个 thenable 对象，Promise.resolve() 将调用其 then() 方法及其两个回调函数；
+     * 否则，返回的 Promise 将会以该值兑现。
+     */
+    static resolve(value) {
+        // 如果该值本身就是一个 Promise，那么该 Promise 将被返回
+        if (value instanceof MyPromise) return value
+        let _resolve, _reject
+        const p = new MyPromise((resolve, reject) =&gt; {
+            _resolve = resolve
+            _reject = reject
+        })
+        // 如果该值是一个 thenable 对象，Promise.resolve() 将调用其 then() 方法及其两个回调函数；
+        if (p._isPromiseLike(value)) {
+            value.then(_resolve, _reject)
+        } else {
+            _resolve(value)
+        }
+        return p
+    }
+    /**
+     * @param {any} reason
+     * Promise.reject() 静态方法返回一个已拒绝（rejected）的 Promise 对象，拒绝原因为给定的参数。
+     */
+    static reject(reason) {
+        return new MyPromise((resolve, reject) =&gt; {
+            reject(reason)
+        })
+    }
+</code></pre>
+</li>
+<li>
+<p>静态方法all allSettled race 的实现</p>
+</li>
+</ol>
+<pre><code class="language-js">/**
+     * Promise.all() 静态方法接受一个 Promise 可迭代对象作为输入，并返回一个 Promise。
+     * 当所有输入的 Promise 都被兑现时，返回的 Promise 也将被兑现（即使传入的是一个空的可迭代对象），并返回一个包含所有兑现值的数组。
+     * 如果输入的任何 Promise 被拒绝，则返回的 Promise 将被拒绝，并带有第一个被拒绝的原因。
+     * @param {iterator} proms
+     */
+    static all(proms) {
+        return new MyPromise((resolve, reject) =&gt; {
+            // 这里使用 try catch 是因为 proms 可能不是一个 iterator
+            try {
+                let count = 0
+                let fullfilledCount = 0
+                const results = []
+                for (const p of proms) {
+                    count++
+                    let i = count
+                    MyPromise.resolve(p).then((data) =&gt; {
+                        results.push(data)
+                        if (count === fullfilledCount) {
+                            resolve(result)
+                        }
+                    }, reject)
+                }
+                if (count = 0) resolve(results)
+            } catch (error) {
+                reject(error)
+            }
+        })
+    }
+    /**
+     * Promise.allSettled() 静态方法将一个 Promise 可迭代对象作为输入，并返回一个单独的 Promise。
+     * 当所有输入的 Promise 都已敲定时（包括传入空的可迭代对象时）
+     * 返回的 Promise 将被兑现，并带有描述每个 Promise 结果的对象数组。
+     * {
+     *  state: this.FULLFILLED,
+     *  value: xxxx
+     * }
+     * {
+     *  state: this.REJECTED,
+     *  reason: xxxx
+     * }
+     * @param {iterator} proms
+     */
+    static allSettled(proms) {
+        const ps = []
+        for (const p of proms) {
+            ps.push(
+                MyPromise.resolve(p).then((value) =&gt; {
+                    return {
+                        state: this.FULLFILLED,
+                        value
+                    }
+                }, (reason) =&gt; {
+                    return {
+                        state: this.REJECTED,
+                        reason
+                    }
+                })
+            )
+        }
+        return MyPromise.all(ps)
+    }
+    /**
+     * Promise.race() 静态方法接受一个 promise 可迭代对象作为输入
+     * 并返回一个 Promise。
+     * 这个返回的 promise 会随着第一个 promise 的敲定而敲定。
+     * @param {iterator} proms
+     */
+    static race(proms) {
+        return new MyPromise((resolve, reject) =&gt; {
+            for (const p of proms) {
+                // 这里是第一个完成的 promise 无论成功还是失败
+                MyPromise.resolve(p).then(resolve, reject)
+            }
+        })
+    }
+</code></pre>
                 <div>
                     <hr>
 
-标题：手写Promise: 1.构造器的实现<br>
+标题：手写Promise的实现<br>
 作者：<a href="https://jin821551407.github.io" target="_blank">jinyu1222</a><br>
 地址：<a href="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html" target="_blank">https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</a><br>
 
@@ -138,17 +419,13 @@
                             <strong>&lt;</strong>
                             <span>&nbsp; FLIP动画演示&nbsp;&nbsp;&nbsp;</span>
                         </a>
-                        <a class="fn__flex-inline" rel="next" href="https://jin821551407.github.io/articles/2024/12/29/1735481128434.html">
-                            <span>手写Promise: 2.then方法返回的时机&nbsp; </span>
-                            <strong>&gt;</strong>
-                        </a>
                 </aside>
         </section>
 
         <footer class="fn-clear share">
             <div class="fn-right">
 <div class="article__share"
-     data-title="手写Promise: 1.构造器的实现"
+     data-title="手写Promise的实现"
      data-blogtitle="FindMyCode"
      data-url="https://jin821551407.github.io/articles/2024/12/29/1735480010074.html"
      data-avatar="https://b3logfile.com/avatar/1703064661267_1703235677768.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100">
@@ -191,7 +468,7 @@
     <div class="fn-clear">
         浏览数：<span data-uvstaturl="https://jin821551407.github.io">0</span>
         &nbsp;
-        文章总数：7
+        文章总数：6
         <br>
         &copy; 2025
         <a href="https://jin821551407.github.io">FindMyCode</a>
@@ -213,11 +490,11 @@
     articleId: "1735480010074",
   }
 </script>
-<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1735991137299"></script>
+<script src="https://jin821551407.github.io/skins/yilia/js/common.min.js?1735992173991"></script>
 
 
 <script type="text/javascript">
-    Util.addScript('https://jin821551407.github.io/js/page.min.js?1735991137299', 'soloPageScript')
+    Util.addScript('https://jin821551407.github.io/js/page.min.js?1735992173991', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
         "oId": "1735480010074",
@@ -237,4 +514,4 @@
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 41ms, 2025/01/04 19:54:10 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 40ms, 2025/01/04 21:39:27 -->
