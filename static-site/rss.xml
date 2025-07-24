@@ -6,7 +6,7 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Thu, 24 Jul 2025 22:47:16 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jul 2025 22:56:28 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>代码雨效果</title>
@@ -15,7 +15,7 @@
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2025/07/24/1753367171022.html</guid>
       <category>炫酷的效果</category>
-      <pubDate>Thu, 24 Jul 2025 22:42:19 +0800</pubDate>
+      <pubDate>Thu, 24 Jul 2025 22:56:01 +0800</pubDate>
     </item>
     <item>
       <title>Promise的实现</title>
@@ -23,10 +23,10 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</guid>
-      <category>promise</category>
       <category>js</category>
-      <category>手写</category>
       <category>面试</category>
+      <category>promise</category>
+      <category>手写</category>
       <pubDate>Sat, 04 Jan 2025 22:02:41 +0800</pubDate>
     </item>
     <item>
@@ -55,9 +55,9 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
-      <category>面试</category>
-      <category>js</category>
       <category>JavaScript</category>
+      <category>js</category>
+      <category>面试</category>
       <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
     </item>
     <item>
@@ -66,8 +66,8 @@
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</guid>
-      <category>面试</category>
       <category>vue</category>
+      <category>面试</category>
       <pubDate>Thu, 27 Jun 2024 11:06:47 +0800</pubDate>
     </item>
     <item>
