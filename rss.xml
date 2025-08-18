@@ -6,8 +6,62 @@
     <atom:link href="https://jin821551407.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>who r u ? say my name </description>
     <generator>Solo, v4.4.0, https://b3log.org/solo</generator>
-    <lastBuildDate>Sat, 02 Aug 2025 21:39:15 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 22:37:29 +0800</lastBuildDate>
     <language>zh-cn</language>
+    <item>
+      <title>TypeScript进阶</title>
+      <link>https://jin821551407.github.io/articles/2025/08/18/1755525205278.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2025/08/18/1755525205278.html</guid>
+      <category>typescript</category>
+      <pubDate>Mon, 18 Aug 2025 22:37:16 +0800</pubDate>
+    </item>
+    <item>
+      <title>TypeScript基础</title>
+      <link>https://jin821551407.github.io/articles/2025/08/18/1755524095257.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2025/08/18/1755524095257.html</guid>
+      <category>typescript</category>
+      <pubDate>Mon, 18 Aug 2025 21:34:55 +0800</pubDate>
+    </item>
+    <item>
+      <title>并发任务控制</title>
+      <link>https://jin821551407.github.io/articles/2025/08/17/1755445868580.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2025/08/17/1755445868580.html</guid>
+      <category>面试题</category>
+      <pubDate>Sun, 17 Aug 2025 23:54:11 +0800</pubDate>
+    </item>
+    <item>
+      <title>描述下列代码的执行结果</title>
+      <link>https://jin821551407.github.io/articles/2025/08/05/1754371423463.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2025/08/05/1754371423463.html</guid>
+      <category>面试题</category>
+      <pubDate>Sun, 17 Aug 2025 23:28:30 +0800</pubDate>
+    </item>
+    <item>
+      <title>将ES6构造函数转换为ES5</title>
+      <link>https://jin821551407.github.io/articles/2025/08/02/1754101916959.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2025/08/02/1754101916959.html</guid>
+      <category>面试题</category>
+      <pubDate>Sun, 17 Aug 2025 23:27:41 +0800</pubDate>
+    </item>
+    <item>
+      <title>数组去重有哪些方法</title>
+      <link>https://jin821551407.github.io/articles/2025/08/02/1754103114814.html</link>
+      <description/>
+      <author>jinyu1222</author>
+      <guid>https://jin821551407.github.io/articles/2025/08/02/1754103114814.html</guid>
+      <category>面试题</category>
+      <pubDate>Sun, 17 Aug 2025 23:26:38 +0800</pubDate>
+    </item>
     <item>
       <title>代码雨效果</title>
       <link>https://jin821551407.github.io/articles/2025/07/24/1753367171022.html</link>
@@ -18,32 +72,14 @@
       <pubDate>Sat, 02 Aug 2025 21:38:21 +0800</pubDate>
     </item>
     <item>
-      <title>每日一题002</title>
-      <link>https://jin821551407.github.io/articles/2025/08/02/1754103114814.html</link>
-      <description/>
-      <author>jinyu1222</author>
-      <guid>https://jin821551407.github.io/articles/2025/08/02/1754103114814.html</guid>
-      <category>每日一题</category>
-      <pubDate>Sat, 02 Aug 2025 10:53:58 +0800</pubDate>
-    </item>
-    <item>
-      <title>每日一题001</title>
-      <link>https://jin821551407.github.io/articles/2025/08/02/1754101916959.html</link>
-      <description/>
-      <author>jinyu1222</author>
-      <guid>https://jin821551407.github.io/articles/2025/08/02/1754101916959.html</guid>
-      <category>每日一题</category>
-      <pubDate>Sat, 02 Aug 2025 10:51:04 +0800</pubDate>
-    </item>
-    <item>
       <title>Promise的实现</title>
       <link>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</link>
       <description/>
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/12/29/1735480010074.html</guid>
+      <category>promise</category>
       <category>手写</category>
       <category>js</category>
-      <category>promise</category>
       <category>面试</category>
       <pubDate>Sat, 04 Jan 2025 22:02:41 +0800</pubDate>
     </item>
@@ -63,39 +99,9 @@
       <author>jinyu1222</author>
       <guid>https://jin821551407.github.io/articles/2024/09/05/1725525546049.html</guid>
       <category>js</category>
-      <category>面试</category>
       <category>JavaScript</category>
+      <category>面试</category>
       <pubDate>Sat, 14 Sep 2024 16:01:39 +0800</pubDate>
-    </item>
-    <item>
-      <title>JS中数据类型的转换</title>
-      <link>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</link>
-      <description/>
-      <author>jinyu1222</author>
-      <guid>https://jin821551407.github.io/articles/2024/08/16/1723796737620.html</guid>
-      <category>面试</category>
-      <category>JavaScript</category>
-      <category>js</category>
-      <pubDate>Fri, 16 Aug 2024 17:24:00 +0800</pubDate>
-    </item>
-    <item>
-      <title>关于vue2中的computed计算属性</title>
-      <link>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</link>
-      <description/>
-      <author>jinyu1222</author>
-      <guid>https://jin821551407.github.io/articles/2024/06/27/1719457607161.html</guid>
-      <category>vue</category>
-      <category>面试</category>
-      <pubDate>Thu, 27 Jun 2024 11:06:47 +0800</pubDate>
-    </item>
-    <item>
-      <title>git查询提交记录</title>
-      <link>https://jin821551407.github.io/articles/2024/04/01/1711936168441.html</link>
-      <description><![CDATA[<p>git查询提交记录</p>]]></description>
-      <author>jinyu1222</author>
-      <guid>https://jin821551407.github.io/articles/2024/04/01/1711936168441.html</guid>
-      <category>git</category>
-      <pubDate>Mon, 01 Apr 2024 09:49:44 +0800</pubDate>
     </item>
   </channel>
 </rss>
